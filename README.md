@@ -7,6 +7,7 @@ A bunch of recipes for [University of Michigan's CAEN Linux](http://caen.engin.u
   * [Change your shell to ZSH](#change-your-shell-to-zsh)
   * [Change your shell to CSH](#change-your-shell-to-csh)
   * [Install Node.js](#install-nodejs)
+  * [Install Python packages with Pip globally](#install-python-packages-with-pip-globally)
 
 
 ************
@@ -87,3 +88,30 @@ nvm alias default v0.10
 ```
 
 Now you should be able to use Node, NPM, and more!
+
+Install Python packages with Pip globally
+-----------------------------------------
+
+*Note: Virtualenv is already installed on CAEN, so unless you need to install packages globally, you don't need to do this.*
+
+We can install Pip (and then Python packages) by making a "dummy" virtualenv, because Pip lives inside these virtual environments.
+
+First, create your dummy virtualenv wherever you like:
+
+```sh
+virtualenv ~/my-dummy-venv  # Feel free to put this somewhere else.
+```
+
+Next, add it to your PATH. Add this to your `~/.bashrc` or your `~/.zshrc`:
+
+```sh
+export PATH="~/my-dummy-venv/bin:$PATH"
+```
+
+Restart your terminal or reload your `rc` file, and then you can install things as you please!
+
+```sh
+# For example, install Flake8.
+pip install flake8
+flake8 my_file.py
+```
