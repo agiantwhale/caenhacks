@@ -3,6 +3,14 @@ UMich CAEN Hacks
 
 A bunch of recipes for [University of Michigan's CAEN Linux](http://caen.engin.umich.edu/faqs/linux). Contributions are welcome!
 
+* Recipes
+  * [Change your shell to ZSH](#change-your-shell-to-zsh)
+  * [Change your shell to CSH](#change-your-shell-to-csh)
+
+
+************
+
+
 Change your shell to ZSH
 ------------------------
 
