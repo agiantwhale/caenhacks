@@ -17,7 +17,7 @@ Change your shell to ZSH
 *In short, run these two commands:*
 
 ```sh
-echo "zsh && exit" >> ~/.bashrc
+echo "exec zsh" >> ~/.bashrc
 echo "setopt no_err_exit" >> ~/.zshrc
 ```
 
@@ -27,7 +27,7 @@ Add the following line to `~/.bashrc`:
 
 ```bash
 # Start ZSH and exit when ZSH exits
-zsh && exit
+exec zsh
 ```
 
 Then add the following to your `~/.zshrc`:
@@ -43,7 +43,7 @@ Change your shell to CSH
 *In short, run this command:*
 
 ```sh
-echo "csh -l && exit" >> ~/.bashrc
+echo "exec csh -l" >> ~/.bashrc
 ```
 
 Like the above, you can run CSH from within Bash. Add the following line to `~/.bashrc`:
@@ -51,5 +51,5 @@ Like the above, you can run CSH from within Bash. Add the following line to `~/.
 
 ```bash
 # Start CSH and exit when CSH exits
-csh -l && exit
+exec csh -l
 ```
