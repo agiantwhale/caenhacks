@@ -16,13 +16,6 @@ A bunch of recipes for [University of Michigan's CAEN Linux](http://caen.engin.u
 Change your shell to ZSH
 ------------------------
 
-*In short, run these two commands:*
-
-```sh
-echo "exec zsh" >> ~/.bashrc
-echo "setopt no_err_exit" >> ~/.zshrc
-```
-
 CAEN [says you can't change your shell from Bash](http://caen.engin.umich.edu/faqs/linux#switchshell), and you're not allowed to run `chsh`. But you can run ZSH on CAEN! All you have to do is run ZSH within Bash.
 
 Add the following line to `~/.bashrc`:
@@ -43,12 +36,6 @@ That's it!
 
 Change your shell to CSH
 ------------------------
-
-*In short, run this command:*
-
-```sh
-echo "exec csh -l" >> ~/.bashrc
-```
 
 Like the above, you can run CSH from within Bash. Add the following line to `~/.bashrc`:
 
