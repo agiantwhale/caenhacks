@@ -7,7 +7,7 @@ A bunch of recipes for [University of Michigan's CAEN Linux](http://caen.engin.u
   * [Change your shell to ZSH](#change-your-shell-to-zsh)
   * [Change your shell to CSH](#change-your-shell-to-csh)
   * [Install Node.js](#install-nodejs)
-  * [Install Python packages with Pip globally](#install-python-packages-with-pip-globally)
+  * [Install Python packages globally with Pip](#install-python-packages-globally-with-pip)
 
 
 ************
@@ -76,7 +76,7 @@ nvm alias default v0.10
 
 Now you should be able to use Node, NPM, and more!
 
-Install Python packages with Pip globally
+Install Python packages globally with Pip
 -----------------------------------------
 
 *Note: Virtualenv is already installed on CAEN, so unless you need to install packages globally, you don't need to do this.*
