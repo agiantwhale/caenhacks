@@ -28,7 +28,7 @@ exec zsh
 
 Then add the following to your `~/.zshrc`:
 
-```zsh
+```sh
 # Tell ZSH not to exit when an error happens; only exit on quit
 setopt no_err_exit
 ```
