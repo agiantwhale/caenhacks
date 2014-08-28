@@ -8,6 +8,7 @@ A bunch of recipes for [University of Michigan's CAEN Linux](http://caen.engin.u
   * [Change your shell to CSH](#change-your-shell-to-csh)
   * [Install Node.js](#install-nodejs)
   * [Install Python packages globally with Pip](#install-python-packages-globally-with-pip)
+  * [Install new versions of Ruby with RVM](#install-new-versions-of-ruby-with-rvm)
 
 
 ************
@@ -101,4 +102,30 @@ Restart your terminal or reload your `rc` file, and then you can install things 
 # For example, install Flake8.
 pip install flake8
 flake8 my_file.py
+```
+
+Install new versions of Ruby with RVM
+-------------------------------------
+
+CAEN comes with Ruby 1.8.7, which is several years old. We can use [RVM](http://rvm.io/) to install newer versions.
+
+```sh
+# Install RVM
+\curl -sSL https://get.rvm.io | bash -s stable
+
+# Start RVM (you can also do this by restarting your shell)
+source ~/.rvm/scripts/rvm
+
+# Ignore missing dependencies
+rvm autolibs read-only
+
+# Install Ruby 2.1.x! This takes awhile because it has to compile.
+rvm install 2.1
+```
+
+Now you'll have the newest Ruby!
+
+```sh
+ruby --version
+gem install rails
 ```
