@@ -9,6 +9,7 @@ A bunch of recipes for [University of Michigan's CAEN Linux](http://caen.engin.u
   * [Install Node.js](#install-nodejs)
   * [Install Python packages globally with Pip](#install-python-packages-globally-with-pip)
   * [Install new versions of Ruby with RVM](#install-new-versions-of-ruby-with-rvm)
+  * [Install Golang](#install-golang)
 
 
 ************
@@ -129,3 +130,22 @@ Now you'll have the newest Ruby!
 ruby --version
 gem install rails
 ```
+
+Install Golang
+--------------
+
+First, go to [golang.org/dl](https://golang.org/dl/) and download the latest 64-bit Go distribution for Linux. Put it wherever you want, but we'll be adding the folder to your PATH so we can run Go. Then extract it:
+
+```sh
+cd /path/to/wherever/you/wanna/install/golang
+tar xvzf GO_TARBALL.tar.gz
+```
+
+Next, add the following to your `~/.bashrc` (or `zshrc`, or whatever):
+
+```sh
+export GOROOT=/path/to/wherever/you/wanna/install/golang/go
+export PATH=$PATH:$GOROOT/bin
+```
+
+Re-source your `rc` or restart the terminal. Now you'll have the `go` executable!
