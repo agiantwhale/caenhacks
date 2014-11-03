@@ -55,10 +55,10 @@ First, we'll need to install NVM:
 
 ```sh
 # If you're using Bash...
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.17.3/install.sh | bash
 
 # If you're using ZSH...
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | PROFILE=~/.zshrc bash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.17.3/install.sh | PROFILE=~/.zshrc bash
 ```
 
 Then we'll start it up. You can also do the below by restarting your terminal.
