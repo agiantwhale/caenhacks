@@ -1,7 +1,9 @@
 University of Michigan CAEN Hacks
 =================================
 
-A bunch of recipes for [University of Michigan's CAEN Linux](http://caen.engin.umich.edu/faqs/linux). Contributions are welcome!
+A bunch of recipes for [University of Michigan's CAEN Linux](http://caen.engin.umich.edu/faqs/linux).
+
+**I've graduated and I don't have CAEN access. If someone else wants to take the reigns on this guide, let me know!**
 
 * Recipes
   * [Change your shell to ZSH](#change-your-shell-to-zsh)
