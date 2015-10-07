@@ -3,8 +3,6 @@ University of Michigan CAEN Hacks
 
 A bunch of recipes for [University of Michigan's CAEN Linux](http://caen.engin.umich.edu/faqs/linux).
 
-This is a forked & updated version from [Evan Hahn's CAEN Hacks](https://github.com/EvanHahn/caenhacks) repository! The contents here are valid as of Fall 2015.
-
 * Recipes
   * [Change your shell to ZSH](#change-your-shell-to-zsh)
   * [Change your shell to CSH](#change-your-shell-to-csh)
