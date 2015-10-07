@@ -3,11 +3,12 @@ University of Michigan CAEN Hacks
 
 A bunch of recipes for [University of Michigan's CAEN Linux](http://caen.engin.umich.edu/faqs/linux).
 
-**I've graduated and I don't have CAEN access. If someone else wants to take the reigns on this guide, let me know!**
+This is a forked & updated version from [Evan Hahn's CAEN Hacks](https://github.com/EvanHahn/caenhacks) repository! The contents here are valid as of Fall 2015.
 
 * Recipes
   * [Change your shell to ZSH](#change-your-shell-to-zsh)
   * [Change your shell to CSH](#change-your-shell-to-csh)
+  * [Install packages](#install-packages)
   * [Install Node.js](#install-nodejs)
   * [Install Python packages globally with Pip](#install-python-packages-globally-with-pip)
   * [Install new versions of Ruby with RVM](#install-new-versions-of-ruby-with-rvm)
@@ -47,6 +48,40 @@ Like the above, you can run CSH from within Bash. Add the following line to `~/.
 ```bash
 # Start CSH and exit when CSH exits
 exec csh -l
+```
+
+Install packages
+---------------
+
+We don't get root access on CAEN computers - so no, we can't use existing package managers such as RPM.
+
+So basically every package you need - compile it yourself and add to path!
+
+I like to approach this by creating a new install location under user's $HOME.
+
+```bash
+mkdir $HOME/usr
+```
+
+Then add the following to your shell startup script:
+
+```bash
+export $PATH="$PATH:/home/[uniquename]/usr/bin/"
+export $LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/[uniquename]/usr/lib/"
+```
+
+When you install a library:
+
+```bash
+# CMake example:
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=$HOME/usr [Path to CMake source]
+make
+make install
+
+# Configure example:
+./configure --prefix=$HOME/usr
+make
+make install
 ```
 
 Install Node.js
