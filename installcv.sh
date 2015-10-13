@@ -7,7 +7,7 @@ rm -rf $SOURCE_DIR
 mkdir -p $SOURCE_DIR
 mkdir -p $PREFIX_DIR
 
-(cd "$SOURCE_DIR" && curl -L -O -J "http://mirrors.concertpass.com/gcc/releases/gcc-5.2.0/gcc-5.2.0.tar.bz2")
+(cd "$SOURCE_DIR" && curl -L -O "http://mirrors.concertpass.com/gcc/releases/gcc-5.2.0/gcc-5.2.0.tar.bz2")
 (cd "$SOURCE_DIR" && tar -xvf "gcc-5.2.0.tar.bz2")
 (cd "$SOURCE_DIR" && ./gcc-5.2.0/contrib/download_prerequisites)
 (mkdir -p "$SOURCE_DIR/gccbuild")
