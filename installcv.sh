@@ -7,12 +7,12 @@ rm -rf $SOURCE_DIR
 mkdir -p $SOURCE_DIR
 mkdir -p $PREFIX_DIR
 
-(cd "$SOURCE_DIR" && curl -L -O "http://mirrors.concertpass.com/gcc/releases/gcc-5.2.0/gcc-5.2.0.tar.bz2")
-(cd "$SOURCE_DIR" && tar -xvf "gcc-5.2.0.tar.bz2")
-(cd "$SOURCE_DIR" && ./gcc-5.2.0/contrib/download_prerequisites)
-(mkdir -p "$SOURCE_DIR/gccbuild")
-(cd "$SOURCE_DIR/gccbuild" && $PWD/../gcc-5.2.0/configure --prefix=$PREFIX_DIR --enable-languages=c,c++)
-(cd "$SOURCE_DIR/gccbuild" && make -j10 && make install)
+# (cd "$SOURCE_DIR" && curl -L -O "http://mirrors.concertpass.com/gcc/releases/gcc-5.2.0/gcc-5.2.0.tar.bz2")
+# (cd "$SOURCE_DIR" && tar -xvf "gcc-5.2.0.tar.bz2")
+# (cd "$SOURCE_DIR" && ./gcc-5.2.0/contrib/download_prerequisites)
+# (mkdir -p "$SOURCE_DIR/gccbuild")
+# (cd "$SOURCE_DIR/gccbuild" && $PWD/../gcc-5.2.0/configure --prefix=$PREFIX_DIR --enable-languages=c,c++)
+# (cd "$SOURCE_DIR/gccbuild" && make -j10 && make install)
 
 git clone https://github.com/boostorg/boost.git "$SOURCE_DIR/boost"
 (cd "$SOURCE_DIR/boost" && ./bootstrap.sh --prefix=$PREFIX_DIR)
