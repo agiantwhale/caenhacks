@@ -14,9 +14,10 @@ mkdir -p $PREFIX_DIR
 # (cd "$SOURCE_DIR/gccbuild" && $PWD/../gcc-5.2.0/configure --prefix=$PREFIX_DIR --enable-languages=c,c++)
 # (cd "$SOURCE_DIR/gccbuild" && make -j10 && make install)
 
-git clone https://github.com/boostorg/boost.git "$SOURCE_DIR/boost"
-(cd "$SOURCE_DIR/boost" && ./bootstrap.sh --prefix=$PREFIX_DIR)
-(cd "$SOURCE_DIR/boost" && ./b2 -j10 install)
+(cd "$SOURCE_DIR" && curl -L -o "boost_1_59_0.tar.bz2" "http://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.bz2/download")
+(cd "$SOURCE_DIR" && tar -xvf "boost_1_59_0.tar.bz2")
+(cd "$SOURCE_DIR/boost_1_59_0" && ./bootstrap.sh --prefix=$PREFIX_DIR)
+(cd "$SOURCE_DIR/boost_1_59_0" && ./b2 -j10 install)
 
 git clone https://github.com/Kitware/CMake.git "$SOURCE_DIR/cmake"
 (cd "$SOURCE_DIR/cmake" && git checkout release)
