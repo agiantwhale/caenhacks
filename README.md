@@ -91,10 +91,10 @@ First, we'll need to install NVM:
 
 ```sh
 # If you're using Bash...
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.17.3/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 
 # If you're using ZSH...
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.17.3/install.sh | PROFILE=~/.zshrc bash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | PROFILE=~/.zshrc bash
 ```
 
 Then we'll start it up. You can also do the below by restarting your terminal.
@@ -106,9 +106,9 @@ source ~/.nvm/nvm.sh
 Next, install your desired version of Node and set it as the default:
 
 ```
-nvm install v0.10
-nvm alias default v0.10
-# You can also install v0.11 or other versions
+nvm install v4.2.0
+nvm alias default v4.2.0
+# You can also install other versions
 ```
 
 Now you should be able to use Node, NPM, and more!
