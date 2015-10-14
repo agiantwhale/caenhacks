@@ -14,6 +14,11 @@ mkdir -p $PREFIX_DIR
 # (cd "$SOURCE_DIR/gccbuild" && $PWD/../gcc-5.2.0/configure --prefix=$PREFIX_DIR --enable-languages=c,c++)
 # (cd "$SOURCE_DIR/gccbuild" && make -j10 && make install)
 
+(cd "$SOURCE_DIR" && curl -L "https://www.python.org/ftp/python/2.7.10/Python-2.7.10.tar.xz")
+(cd "$SOURCE_DIR" && tar -xvf "Python-2.7.10.tar.xz")
+(cd "$SOURCE_DIR/Python-2.7.10" && ./configure --prefix=$PREFIX_DIR --enable-shared --with-system-expat --with-system-ffi --enable-unicode=ucs4)
+(cd "$SOURCE_DIR/Python-2.7.10" && make && make install && chmod -v 755 $PREFIX_DIR/lib/libpython2.7.so.1.0)
+
 (cd "$SOURCE_DIR" && curl -L -o "boost_1_59_0.tar.bz2" "http://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.bz2/download")
 (cd "$SOURCE_DIR" && tar -xvf "boost_1_59_0.tar.bz2")
 (cd "$SOURCE_DIR/boost_1_59_0" && ./bootstrap.sh --prefix=$PREFIX_DIR)
