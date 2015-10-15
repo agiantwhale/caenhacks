@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SOURCE_DIR="/tmp/source"
-PREFIX_DIR="$HOME/scs"
+PREFIX_DIR="$HOME/scsusr"
 
 rm -rf $SOURCE_DIR
 mkdir -p $SOURCE_DIR
@@ -34,7 +34,7 @@ git clone https://github.com/Kitware/CMake.git "$SOURCE_DIR/cmake"
 
 git clone https://github.com/yasm/yasm.git "$SOURCE_DIR/yasm"
 mkdir -p "$SOURCE_DIR/yasmbuild"
-(cd "$SOURCE_DIR/yasmbuild" && cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=$PREFIX_DIR -D CMAKE_PREFIX_PATH=$PREFIX_DIR ../yasm)
+(cd "$SOURCE_DIR/yasmbuild" && $PREFIX_DIR/bin/cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=$PREFIX_DIR -D CMAKE_PREFIX_PATH=$PREFIX_DIR ../yasm)
 (cd "$SOURCE_DIR/yasmbuild" && make -j10 && make install)
 
 git clone git://git.videolan.org/x264.git "$SOURCE_DIR/x264"
@@ -48,7 +48,7 @@ git clone https://github.com/FFmpeg/FFmpeg.git "$SOURCE_DIR/ffmpeg"
 (cd "$SOURCE_DIR" && $PREFIX_DIR/bin/pip install numpy)
 git clone https://github.com/Itseez/opencv.git "$SOURCE_DIR/cv"
 mkdir -p "$SOURCE_DIR/cvbuild"
-(cd "$SOURCE_DIR/cvbuild" && PKG_CONFIG_PATH="$PREFIX_DIR/lib/pkgconfig" cmake \
+(cd "$SOURCE_DIR/cvbuild" && PKG_CONFIG_PATH="$PREFIX_DIR/lib/pkgconfig" $PREFIX_DIR/bin/cmake \
   -D CMAKE_BUILD_TYPE=RELEASE \
   -D CMAKE_INSTALL_PREFIX=$PREFIX_DIR \
   -D CMAKE_PREFIX_PATH=$PREFIX_DIR \
