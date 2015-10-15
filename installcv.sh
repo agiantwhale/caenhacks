@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SOURCE_DIR="/tmp/source"
-PREFIX_DIR="$HOME/usr"
+PREFIX_DIR="$HOME/scs"
 
 rm -rf $SOURCE_DIR
 mkdir -p $SOURCE_DIR
