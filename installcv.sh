@@ -47,7 +47,6 @@ git clone https://github.com/FFmpeg/FFmpeg.git "$SOURCE_DIR/ffmpeg"
 
 (cd "$SOURCE_DIR" && $PREFIX_DIR/bin/pip install numpy)
 git clone https://github.com/Itseez/opencv.git "$SOURCE_DIR/cv"
-(cd "$SOURCE_DIR/cv" && git checkout 2.4)
 mkdir -p "$SOURCE_DIR/cvbuild"
 (cd "$SOURCE_DIR/cvbuild" && PKG_CONFIG_PATH="$PREFIX_DIR/lib/pkgconfig" $PREFIX_DIR/bin/cmake \
   -D CMAKE_BUILD_TYPE=RELEASE \
