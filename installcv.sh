@@ -47,11 +47,13 @@ git clone https://github.com/FFmpeg/FFmpeg.git "$SOURCE_DIR/ffmpeg"
 
 (cd "$SOURCE_DIR" && $PREFIX_DIR/bin/pip install numpy)
 git clone https://github.com/Itseez/opencv.git "$SOURCE_DIR/cv"
+(cv "$SOURCE_DIR/cv" && git checkout 2.4)
 mkdir -p "$SOURCE_DIR/cvbuild"
 (cd "$SOURCE_DIR/cvbuild" && PKG_CONFIG_PATH="$PREFIX_DIR/lib/pkgconfig" $PREFIX_DIR/bin/cmake \
   -D CMAKE_BUILD_TYPE=RELEASE \
   -D CMAKE_INSTALL_PREFIX=$PREFIX_DIR \
   -D CMAKE_PREFIX_PATH=$PREFIX_DIR \
+  -D BUILD_NEW_PYTHON_SUPPORT=ON \
   -D PYTHON2_EXECUTABLE=$PREFIX_DIR/bin/python2.7 \
   -D PYTHON2_INCLUDE=$PREFIX_DIR/include/python2.7/ \
   -D PYTHON2_LIBRARIES=$PREFIX_DIR/lib/libpython2.7.so.1.0 \
