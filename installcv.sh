@@ -22,10 +22,10 @@ mkdir -p $PREFIX_DIR
 (cd "$SOURCE_DIR" && curl -O -L "https://bootstrap.pypa.io/get-pip.py")
 (cd "$SOURCE_DIR" && $PREFIX_DIR/bin/python2.7 get-pip.py)
 
-# (cd "$SOURCE_DIR" && curl -L -o "boost_1_59_0.tar.bz2" "http://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.bz2/download")
-# (cd "$SOURCE_DIR" && tar -xvf "boost_1_59_0.tar.bz2")
-# (cd "$SOURCE_DIR/boost_1_59_0" && ./bootstrap.sh --prefix=$PREFIX_DIR)
-# (cd "$SOURCE_DIR/boost_1_59_0" && ./b2 -j10 install)
+(cd "$SOURCE_DIR" && curl -L -o "boost_1_59_0.tar.bz2" "http://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.bz2/download")
+(cd "$SOURCE_DIR" && tar -xvf "boost_1_59_0.tar.bz2")
+(cd "$SOURCE_DIR/boost_1_59_0" && ./bootstrap.sh --prefix=$PREFIX_DIR)
+(cd "$SOURCE_DIR/boost_1_59_0" && ./b2 -j10 install)
 
 git clone https://github.com/Kitware/CMake.git "$SOURCE_DIR/cmake"
 (cd "$SOURCE_DIR/cmake" && git checkout release)
@@ -46,7 +46,6 @@ git clone https://github.com/FFmpeg/FFmpeg.git "$SOURCE_DIR/ffmpeg"
 (cd "$SOURCE_DIR/ffmpeg" && make -j10 && make install)
 
 (cd "$SOURCE_DIR" && $PREFIX_DIR/bin/pip install numpy)
-git clone https://github.com/Itseez/opencv.git "$SOURCE_DIR/cv"
 (cv "$SOURCE_DIR/cv" && git checkout 2.4)
 mkdir -p "$SOURCE_DIR/cvbuild"
 (cd "$SOURCE_DIR/cvbuild" && PKG_CONFIG_PATH="$PREFIX_DIR/lib/pkgconfig" $PREFIX_DIR/bin/cmake \
