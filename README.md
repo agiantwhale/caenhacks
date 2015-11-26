@@ -116,14 +116,28 @@ Now you should be able to use Node, NPM, and more!
 Install Python packages globally with Pip
 -----------------------------------------
 
-*Note: Virtualenv is already installed on CAEN, so unless you need to install packages globally, you don't need to do this.*
+`virtualenv` *should* be installed on CAEN, but it may not be (perhaps as the result of an OS update). If running `virtualenv` gives you a command-not-found error, then you can install it with `easy_install`.
 
-We can install Pip (and then Python packages) by making a "dummy" virtualenv, because Pip lives inside these virtual environments.
+To install `virtualenv`, create a directory for `easy_install` to install packages into:
+
+```sh
+mkdir -p ~/.local/lib/python2.7/site-packages
+easy_install --prefix=~/.local virtualenv
+```
+
+If this completes with success you should be able to use `python -m virtualenv` to run `virtualenv`. (If you really want to run `virtualenv` instead of `python -m virtualenv`, you can add `~/.local/bin` to your `PATH`.) For example:
+
+```sh
+python -m virtualenv venv
+. venv/bin/activate
+```
+
+If you only need to create virtualenvs for your Python projects, you can stop here. Otherwise, we can install Pip (and then Python packages globally) by making a "dummy" virtualenv, because Pip lives inside these virtual environments.
 
 First, create your dummy virtualenv wherever you like:
 
 ```sh
-virtualenv ~/my-dummy-venv  # Feel free to put this somewhere else.
+python -m virtualenv ~/my-dummy-venv  # Feel free to put this somewhere else.
 ```
 
 Next, add it to your PATH. Add this to your `~/.bashrc` or your `~/.zshrc`:
