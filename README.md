@@ -106,9 +106,9 @@ source ~/.nvm/nvm.sh
 Next, install your desired version of Node and set it as the default:
 
 ```
-nvm install v0.10
-nvm alias default v0.10
-# You can also install v0.11 or other versions
+nvm install 8
+nvm alias default 8
+# You can also install other versions
 ```
 
 Now you should be able to use Node, NPM, and more!
